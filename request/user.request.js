@@ -9,6 +9,7 @@ export default class User {
                 Authorization: `Bearer ${token}`
             }
         })
+        //Checando se a lista de users retorna 200 (positivo)
         check(response, { 'Listagem deve retornar 200': r => r && r.status === 200})
     }
 }

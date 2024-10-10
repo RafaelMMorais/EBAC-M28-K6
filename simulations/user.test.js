@@ -3,12 +3,13 @@ import Login from '../request/login.request';
 import data from '../data/users.json';
 import User from '../request/user.request';
 
+//Teste de performance 
 export const options = {
     stages: [
-        {duration: '10s', target: 10},
-        {duration: '5s', target: 50},
-        {duration: '10s', target: 10},
-        {duration: '5s', target: 0}
+        {duration: '10s', target: 10},//10 VUs durante 10 segundos
+        {duration: '5s', target: 50}, //50 VUs durante 5 segundos
+        {duration: '10s', target: 10}, //10 VUs durante 10 segundos
+        {duration: '5s', target: 0} //0 VUs durante 5 segundos
     ],
     thresholds: {
         http_req_duration: ['p(99) < 1000']
